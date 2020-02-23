@@ -82,9 +82,9 @@ for i in range(0,26):
     print(faces)
     for x, y, w, h in faces:
         image = cv2.rectangle(image, (x, y), (x+w, y+w), (0, 255, 0), 3)
-        # roi_color = image[y:y + h, x:x + w]
-        # print("[INFO] Object found. Saving locally.")
-        # cv2.imwrite(str(w) + str(h) + '_faces.jpg', roi_color)
+        roi_color = image[y:y + h, x:x + w]
+        print("[INFO] Object found. Saving locally.")
+        cv2.imwrite(str(w) + str(h) + '_faces.jpg', roi_color)
 
     cv2.imshow('Grey image Window', image)
     cv2.waitKey(0)
